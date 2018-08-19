@@ -14,9 +14,10 @@ public class Point {
         );
     }
     public static void main(String[] args) {
-        Point c = new Point(0, 1);
+        Point a = new Point(0, 1);
         Point b = new Point(2, 5);
-        c.distanceTo(b);
+        double result = a.distanceTo(b);
+        System.out.println("Расстояние между точками А и В : " + result);
     }
 
 }
