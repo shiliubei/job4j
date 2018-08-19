@@ -18,4 +18,16 @@ public class Max {
 
         return max;
     }
+    /**
+     * finding a greater number from three numbers use MaxOfTwo.
+     * @param  first one of two numbers.
+     * @param  second one of two numbers.
+     * @return summ.
+     */
+    public int max(int first, int second, int third){
+
+        int max = this.max(this.max(first, second),third);
+
+        return max;
+    }
 }
