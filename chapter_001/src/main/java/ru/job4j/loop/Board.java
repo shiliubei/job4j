@@ -9,8 +9,8 @@ package ru.job4j.loop;
 public class Board {
     /**
      * paint a board in chess board style.
-     * @param width  width of board.
-     * @param height  height of board.
+     * @param width - width of board.
+     * @param height - height of board.
      * @return screen.
      */
     public String paint(int width, int height) {
