@@ -3,21 +3,34 @@ package ru.job.profession;
 
 public class Professions {
     String name;
-}
-
-class Doctor extends Profession {
-    public void treat(Patient person) {
-
+    public String getName(String name){
+        return this.name;
     }
 }
 
-class Teacher extends Profession {
+class Doctor extends Professions {
+    public void treat(Patient person) {
+
+    }
+    public Diagnose heal(Patient patient) {
+        Diagnose diagnosis =new Diagnose() ;
+        return diagnosis;
+    }
+}
+class Diagnose{
+    String diagnosis;
+    public String esteblishDiagnosis(String diagnosis){
+        return this.diagnosis;
+    }
+
+}
+class Teacher extends Professions {
     public void teach(Student person) {
 
     }
 }
 
-class Engineer extends Profession {
+class Engineer extends Professions {
     public void buildHouse(House house) {
 
     }
