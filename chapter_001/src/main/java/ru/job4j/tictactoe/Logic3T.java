@@ -16,6 +16,8 @@ public class Logic3T {
 
     /**
      * Method that watching is X winner or not.
+     * It count X marked cells of every row(use horizontalCount) and column (use verticalCount)
+     * After each iteration of external loop horizontalCount and verticalCount are reset to zero.
      *
      * @return true if X winner, false if not.
      */
@@ -24,36 +26,28 @@ public class Logic3T {
         int horizontalCount = 0;
         int firstDiagonal = 0;
         int secondDiagonal = 0;
-
         for (int row = 0; row < 3; row++) {
             verticalCount = 0;
             horizontalCount = 0;
             for (int column = 0; column < 3; column++) {
-                if (!this.table[row][column].hasMarkO()) {
+                if (this.table[row][column].hasMarkX()) {
                     verticalCount++;
                 }
-                if (!this.table[column][row].hasMarkO()) {
+                if (this.table[column][row].hasMarkX()) {
                     horizontalCount++;
                 }
-
             }
-            if (!this.table[row][row].hasMarkO()) {
+            if (this.table[row][row].hasMarkX()) {
                 firstDiagonal++;
             }
-            if (!this.table[row][2 - row].hasMarkO()) {
+            if (this.table[row][2 - row].hasMarkX()) {
                 secondDiagonal++;
             }
-            if (verticalCount == 3 || horizontalCount == 3) {
+            if (verticalCount == 3 || horizontalCount == 3 || firstDiagonal == 3 || secondDiagonal == 3) {
                 return true;
             }
         }
-        System.out.println("first diagonal =" + firstDiagonal + " " + verticalCount + " " + horizontalCount);
-        if (firstDiagonal == 3 || secondDiagonal == 3) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return false;
     }
 
     /**
@@ -62,8 +56,8 @@ public class Logic3T {
      * @return true if O winner, false if not.
      */
     public boolean isWinnerO() {
-        int verticalCount = 0;
-        int horizontalCount = 0;
+        int verticalCount;
+        int horizontalCount;
         int firstDiagonal = 0;
         int secondDiagonal = 0;
         for (int row = 0; row < 3; row++) {
@@ -90,24 +84,23 @@ public class Logic3T {
         return false;
     }
 
+
     /**
      * Method that checking are the any void cells.
      *
      * @return true if there are, false if have no void cells.
      */
     public boolean hasGap() {
-        int count = 0;
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 3; column++) {
-                if (this.table[row][2 - row].hasMarkO() || this.table[row][2 - row].hasMarkX()) {
-                    count++;
+                if (this.table[row][column].hasMarkO() || this.table[row][column].hasMarkX()) {
+                } else {
+                    return true;
                 }
             }
         }
-        if (count == 9) {
-            return false;
-        }
+        return false;
 
-        return true;
+
     }
 }
