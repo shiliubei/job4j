@@ -16,7 +16,7 @@ public class TreckerTest {
     @Test
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
-        Item item = new Item("test1", "testDescription", 123L);
+        Item item = new Item("test1", "testDescription");
         tracker.add(item);
         assertThat(tracker.getAll()[0], is(item));
     }
@@ -24,9 +24,9 @@ public class TreckerTest {
     @Test
     public void whenReplaceNameThenReturnNewName() {
         Tracker tracker = new Tracker();
-        Item previous = new Item("test1", "testDescription", 123L);
+        Item previous = new Item("test1", "testDescription");
         tracker.add(previous);
-        Item next = new Item("test2", "testDescription2", 1234L);
+        Item next = new Item("test2", "testDescription2");
         next.setId(previous.getId());
         tracker.replace(previous.getId(), next);
         assertThat(tracker.findById(previous.getId()).getName(), is("test2"));
@@ -35,8 +35,8 @@ public class TreckerTest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item first = new Item("test1", "testDescription", 123L);
-        Item second = new Item("test2", "testDescription22", 1234L);
+        Item first = new Item("test1", "testDescription");
+        Item second = new Item("test2", "testDescription22");
         Item[] array = new Item[1];
         array[0] = second;
         tracker.add(first);
@@ -49,8 +49,8 @@ public class TreckerTest {
     @Test
     public void whenFindByName() {
         Tracker tracker = new Tracker();
-        Item first = new Item("test1", "testDescription", 123L);
-        Item second = new Item("test2", "testDescription22", 1234L);
+        Item first = new Item("test1", "testDescription");
+        Item second = new Item("test2", "testDescription22");
         tracker.add(first);
         tracker.add(second);
         assertThat(first, is(tracker.findByName(first.getName())));
@@ -59,8 +59,8 @@ public class TreckerTest {
     @Test
     public void whenFindAllName() {
         Tracker tracker = new Tracker();
-        Item first = new Item("test1", "testDescription", 123L);
-        Item second = new Item("test2", "testDescription22", 1234L);
+        Item first = new Item("test1", "testDescription");
+        Item second = new Item("test2", "testDescription22");
         Item[] array = new Item[2];
         array[0] = first;
         array[1] = second;

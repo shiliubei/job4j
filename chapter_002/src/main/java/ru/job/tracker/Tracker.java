@@ -17,10 +17,10 @@ public class Tracker {
      * @return array of items.
      */
     private final Item[] items = new Item[100];
-    private int position = 0;
+    private int position;
     public int id = 100;
 
-    protected Item findById(String id) {
+    public Item findById(String id) {
         Item result = null;
         for (Item item : items) {
             if (item != null && item.getId().equals(id)) {
@@ -37,7 +37,7 @@ public class Tracker {
      * @param name String item's name.
      * @return item.
      */
-    protected Item findByName(String name) {
+    public Item findByName(String name) {
         Item result = null;
         for (Item item : items) {
             if (item != null && item.getName().equals(name)) {
@@ -56,7 +56,6 @@ public class Tracker {
     public Item add(Item item) {
         item.setId(this.generateId());
         this.items[this.position++] = item;
-        System.out.println(id);
         return item;
     }
 
@@ -67,7 +66,7 @@ public class Tracker {
      */
     public Item[] getAll() {
         Item[] result = new Item[this.position];
-        for (int index = 0; index != this.position; index++) {
+        for (int index = 0; index < this.position; index++) {
             result[index] = this.items[index];
         }
         return result;
@@ -92,16 +91,14 @@ public class Tracker {
      * @return Absolutely unic id.
      */
     private String generateId() {
-        id++;
-        return Integer.toString(id);
+        return Integer.toString(++id);
     }
 
     /**
      * @return .
      */
     public void replace(String id, Item item) {
-
-        for (int index = 0; index < items.length; index++) {
+        for (int index = 0; index < this.position; index++) {
             if (items[index].getId().equals(id)) {
                 items[index] = item;
                 break;
@@ -112,18 +109,14 @@ public class Tracker {
     public void delete(String id) {
         for (int index = 0; index < position; index++) {
             if (items[index].getId().equals(id)) {
-                if (position > 0) {
-                    items[index] = items[position];
-                    position--;
-                    System.arraycopy(items, index + 1, items, index, position);
-                } else {
-                    items[index] = null;
-                }
-                break;
+                items[index] = items[position];
+                position--;
+                System.arraycopy(items, index + 1, items, index, position);
+            } else {
+                items[index] = null;
             }
-
+            break;
         }
-
 
     }
 }
