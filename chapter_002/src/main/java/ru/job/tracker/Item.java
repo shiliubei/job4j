@@ -22,10 +22,6 @@ public class Item {
         return this.description;
     }
 
-    public long getCreate() {
-        return this.create;
-    }
-
     public String getId() {
         return this.id;
     }
