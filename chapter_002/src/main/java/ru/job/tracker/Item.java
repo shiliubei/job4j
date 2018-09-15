@@ -4,14 +4,10 @@ public class Item {
     private String id;
     public String name;
     public String description;
-    public long create;
-
 
     public Item(String name, String description) {
         this.name = name;
         this.description = description;
-        //this.create = create;
-
     }
 
     public String getName() {

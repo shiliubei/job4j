@@ -1,11 +1,8 @@
 package ru.job.tracker;
 
-import java.util.Arrays;
 
 public class StartUI {
-    /**
-     * Константа меню для добавления новой заявки.
-     */
+
     private static final String ADD = "0";
     private static final String SHOWALL = "1";
     private static final String EDIT = "2";
@@ -25,7 +22,7 @@ public class StartUI {
         boolean exit = false;
         while (!exit) {
             this.showMenu();
-            String answer = this.input.ask("Введите пункт меню : ");
+            String answer = this.input.ask("Enter the menu item : ");
             if (ADD.equals(answer)) {
                 this.createItem();
             } else if (SHOWALL.equals(answer)) {
@@ -57,6 +54,9 @@ public class StartUI {
         System.out.println("------------ Новая заявка с getId : " + item.getId() + "-----------");
     }
 
+    /**
+     * This method shows all items .
+     */
     private void showAllItems() {
         System.out.println("------------ Show all items --------------");
         Item[] result = tracker.getAll();
@@ -64,9 +64,14 @@ public class StartUI {
             System.out.println("There is no items");
         }
         for (int index = 0; index < tracker.findAll().length; index++) {
-            System.out.print("id: " + result[index].getId() + " Name: " + result[index].getName() + " Description: " + result[index].getDescription() + "\n");
+            System.out.print("id: " + result[index].getId() + " Name: " + result[index].getName() +
+                    " Description: " + result[index].getDescription() + "\n");
         }
     }
+
+    /**
+     * This method shows menu.
+     */
     private void showMenu() {
         System.out.println("Меню.");
         System.out.println("0. Add new Item.");
@@ -79,44 +84,62 @@ public class StartUI {
         System.out.println("Select:");
     }
 
+    /**
+     * This method edit item founded by id.
+     */
     private void editItem() {
         System.out.println("------------ Edit item --------------");
         String itemId = this.input.ask("Enter an id of item u need to edit: ");
         String name = this.input.ask("Enter a name you need to change to :");
         String desc = this.input.ask("Enter a new description:");
         Item item = new Item(name, desc);
-        if(tracker.findById(itemId)!=null){
+        if (tracker.findById(itemId) != null) {
             tracker.replace(itemId, item);
-        }else {
+        } else {
             System.out.println("There is no item with this id");
         }
 
     }
 
+    /**
+     * This method delete item founded by id.
+     */
     private void deleteItem() {
         System.out.println("------------ Delete item --------------");
         String itemId = this.input.ask("Enter id of item you want to delete: ");
-        if(tracker.findById(itemId)!=null){
+        if (tracker.findById(itemId) != null) {
             tracker.delete(itemId);
-        }else {
+        } else {
             System.out.println("There is no item with this id");
         }
     }
+
+    /**
+     * This method find item by id.
+     */
     private void findById() {
         System.out.println("------------ Find item by id --------------");
         String itemId = this.input.ask("Enter id of item you want to find: ");
-        if(tracker.findById(itemId)!=null){
-            System.out.print("id: " + tracker.findByName(itemId).getId() + " Name: " +tracker.findByName(itemId).getName() + " Description: " + tracker.findByName(itemId).getDescription() + "\n");
-        }else {
+        if (tracker.findById(itemId) != null) {
+            System.out.print("id: " + tracker.findByName(itemId).getId() + " Name: " +
+                    tracker.findByName(itemId).getName() + " Description: " +
+                    tracker.findByName(itemId).getDescription() + "\n");
+        } else {
             System.out.println("There is no item with this id");
         }
     }
+
+    /**
+     * This method find item by name.
+     */
     private void findByName() {
         System.out.println("------------ Find item by name --------------");
         String itemName = this.input.ask("Enter name of item you want to find: ");
-        if(tracker.findByName(itemName)!=null){
-            System.out.print("id: " + tracker.findByName(itemName).getId() + " Name: " +tracker.findByName(itemName).getName() + " Description: " + tracker.findByName(itemName).getDescription() + "\n");
-        }else {
+        if (tracker.findByName(itemName) != null) {
+            System.out.print("id: " + tracker.findByName(itemName).getId() + " Name: " +
+                    tracker.findByName(itemName).getName() + " Description: " +
+                    tracker.findByName(itemName).getDescription() + "\n");
+        } else {
             System.out.println("There is no item with this name");
         }
 

@@ -95,13 +95,16 @@ public class Tracker {
     }
 
     /**
-     * @return .
+     * This method replace item f.
+     * @param id String.
+     * @param item Item.
      */
     public void replace(String id, Item item) {
         for (int index = 0; index < this.position; index++) {
             if (items[index].getId().equals(id)) {
+                String itemId = items[index].getId();
                 items[index] = item;
-                //items[index].setId(generateId());
+                items[index].setId(itemId);
                 break;
             }
         }
