@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
  *
  * @author Danil Liu (shiliubei@gmail.com)
  * @version $0.1$
- * @since 15.09.18
+ * @since 16.09.18
  */
 public class StubInputTest {
 

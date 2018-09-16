@@ -13,6 +13,7 @@ public class StartUI {
     private final Input input;
     private final Tracker tracker;
 
+
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
@@ -70,7 +71,7 @@ public class StartUI {
     }
 
     /**
-     * This method shows menu.
+     * This method shows the menu.
      */
     private void showMenu() {
         System.out.println("Меню.");

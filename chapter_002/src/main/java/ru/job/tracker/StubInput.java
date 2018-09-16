@@ -9,6 +9,7 @@ public class StubInput implements Input {
         this.value = value;
     }
 
+
     @Override
     public String ask(String question) {
         return this.value[this.position++];
