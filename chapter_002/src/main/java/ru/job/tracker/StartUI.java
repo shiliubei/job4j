@@ -1,5 +1,5 @@
 package ru.job.tracker;
-
+import java.lang.String;
 
 public class StartUI {
 
@@ -10,12 +10,15 @@ public class StartUI {
     private static final String FINDBYID = "4";
     private static final String FINDBYNAME = "5";
     private static final String EXIT = "6";
-    private final Input input;
+    private  Input input;
     private final Tracker tracker;
 
 
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
+        this.tracker = tracker;
+    }
+    public StartUI (Tracker tracker){
         this.tracker = tracker;
     }
 
@@ -58,7 +61,7 @@ public class StartUI {
     /**
      * This method shows all items .
      */
-    private void showAllItems() {
+    public void showAllItems() {
         System.out.println("------------ Show all items --------------");
         Item[] result = tracker.getAll();
         if (tracker.findAll().length == 0) {
@@ -66,7 +69,9 @@ public class StartUI {
         }
         for (int index = 0; index < tracker.findAll().length; index++) {
             System.out.print("id: " + result[index].getId() + " Name: " + result[index].getName() +
-                    " Description: " + result[index].getDescription() + "\n");
+                    " Description: " + result[index].getDescription()
+                    //+ System.lineSeparator()
+            );
         }
     }
 
@@ -118,13 +123,13 @@ public class StartUI {
     /**
      * This method find item by id.
      */
-    private void findById() {
+    public void findById() {
         System.out.println("------------ Find item by id --------------");
         String itemId = this.input.ask("Enter id of item you want to find: ");
         if (tracker.findById(itemId) != null) {
-            System.out.print("id: " + tracker.findByName(itemId).getId() + " Name: " +
-                    tracker.findByName(itemId).getName() + " Description: " +
-                    tracker.findByName(itemId).getDescription() + "\n");
+            System.out.print("id: " + tracker.findById(itemId).getId() + " Name: " +
+                    tracker.findById(itemId).getName() + " Description: " +
+                    tracker.findById(itemId).getDescription() + "\n");
         } else {
             System.out.println("There is no item with this id");
         }
@@ -152,6 +157,7 @@ public class StartUI {
      * @param args
      */
     public static void main(String[] args) {
+
         new StartUI(new ConsoleInput(), new Tracker()).init();
     }
 }
