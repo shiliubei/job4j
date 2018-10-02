@@ -1,4 +1,6 @@
 package ru.job.tracker;
+import com.sun.xml.internal.bind.v2.model.core.ID;
+
 import java.lang.String;
 
 public class StartUI {
@@ -70,7 +72,7 @@ public class StartUI {
         for (int index = 0; index < tracker.findAll().length; index++) {
             System.out.print("id: " + result[index].getId() + " Name: " + result[index].getName() +
                     " Description: " + result[index].getDescription()
-                    //+ System.lineSeparator()
+                    + System.lineSeparator()
             );
         }
     }
@@ -127,7 +129,7 @@ public class StartUI {
         System.out.println("------------ Find item by id --------------");
         String itemId = this.input.ask("Enter id of item you want to find: ");
         if (tracker.findById(itemId) != null) {
-            System.out.print("id: " + tracker.findById(itemId).getId() + " Name: " +
+            System.out.print("id: " + this.tracker.findById(itemId).getId() + " Name: " +
                     tracker.findById(itemId).getName() + " Description: " +
                     tracker.findById(itemId).getDescription() + "\n");
         } else {
