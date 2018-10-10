@@ -5,13 +5,14 @@ import java.lang.String;
 
 public class StartUI {
 
-    private static final String ADD = "0";
+   /* private static final String ADD = "0";
     private static final String SHOWALL = "1";
     private static final String EDIT = "2";
     private static final String DELETE = "3";
     private static final String FINDBYID = "4";
     private static final String FINDBYNAME = "5";
     private static final String EXIT = "6";
+    */
     private  Input input;
     private final Tracker tracker;
 
@@ -24,7 +25,7 @@ public class StartUI {
         this.tracker = tracker;
     }
 
-    public void init() {
+  /*  public void init() {
         boolean exit = false;
         while (!exit) {
             this.showMenu();
@@ -46,7 +47,19 @@ public class StartUI {
             }
         }
 
-    }
+    } */
+  public void init() {
+      MenuTracker menu = new MenuTracker(this.input, this.tracker);
+      int[] range = new int[1];
+      menu.fillActions();
+      for (int i = 0; i < menu.getActionsLentgh(); i++) {
+          range[i]=i;
+      }
+      do {
+          menu.show();
+          menu.select(input.ask("select:", range));
+      } while (!"y".equals(this.input.ask("Exit?(y): ")));
+  }
 
     /**
      * This method add a new item to the repository.

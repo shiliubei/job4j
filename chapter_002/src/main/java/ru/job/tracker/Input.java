@@ -1,5 +1,7 @@
 package ru.job.tracker;
 
+import java.util.List;
+
 /**
  * Functional interface.
  */
