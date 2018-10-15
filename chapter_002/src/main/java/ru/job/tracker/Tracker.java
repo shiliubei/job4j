@@ -111,13 +111,14 @@ public class Tracker {
     }
 
     public void delete(String id) {
-        for (int index = 0; index < position; index++) {
-            if (items[index].getId().equals(id)) {
+        for (int index = 0; index <= position; index++) {
+            if (items[index].getId().equals(id)&&index != position) {
                 items[index] = items[position];
                 position--;
                 System.arraycopy(items, index + 1, items, index, position);
             } else {
-                items[index] = null;
+                position--;
+                System.arraycopy(items, index + 1, items, index, position-1);
             }
             break;
         }
