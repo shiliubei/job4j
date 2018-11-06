@@ -1,6 +1,5 @@
 package ru.job.tracker;
 
-import java.util.List;
 
 /**
  * Functional interface.
@@ -8,6 +7,7 @@ import java.util.List;
 
 public interface Input {
 
-  // int ask(String question, int [] range);
     String ask(String question);
+
+    int ask (String question, int[] range);
 }

@@ -1,68 +1,33 @@
 package ru.job.tracker;
+
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
 import java.lang.String;
 
 public class StartUI {
 
-   /* private static final String ADD = "0";
-    private static final String SHOWALL = "1";
-    private static final String EDIT = "2";
-    private static final String DELETE = "3";
-    private static final String FINDBYID = "4";
-    private static final String FINDBYNAME = "5";
-    private static final String EXIT = "6";
-    */
-    private  Input input;
+    private Input input;
     private final Tracker tracker;
-
+    private int[] ranges = new int[]{0, 1, 2, 3, 4};
 
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
         this.tracker = tracker;
     }
-    public StartUI (Tracker tracker){
+
+    public StartUI(Tracker tracker) {
         this.tracker = tracker;
     }
 
-  /*  public void init() {
-        boolean exit = false;
-        while (!exit) {
-            this.showMenu();
-            String answer = this.input.ask("Enter the menu item : ");
-            if (ADD.equals(answer)) {
-                this.createItem();
-            } else if (SHOWALL.equals(answer)) {
-                this.showAllItems();
-            } else if (EDIT.equals(answer)) {
-                this.editItem();
-            } else if (DELETE.equals(answer)) {
-                this.deleteItem();
-            } else if (FINDBYID.equals(answer)) {
-                this.findById();
-            } else if (FINDBYNAME.equals(answer)) {
-                this.findByName();
-            } else if (EXIT.equals(answer)) {
-                exit = true;
-            }
-        }
 
-    } */
-
-  public void init() {
-      MenuTracker menu = new MenuTracker(this.input, this.tracker);
-     // int[] range = new int[2];
-      menu.fillActions();
-      /*for (int i = 0; i < menu.getActionsLentgh(); i++) {
-          range[i]=i;
-      } */
-      do {
-          menu.show();
-          int key = Integer.valueOf(input.ask("Select: "));
-          //menu.select(input.ask("select:", range));
-          menu.select(key);
-      } while (!"y".equals(this.input.ask("Exit?(y): ")));
-  }
+    public void init() {
+        MenuTracker menu = new MenuTracker(this.input, this.tracker);
+        menu.fillActions();
+        do {
+            menu.show();
+            menu.select(input.ask("select", ranges));
+        } while (!"y".equals(this.input.ask("Exit?(y): ")));
+    }
 
     /**
      * This method add a new item to the repository.
@@ -176,6 +141,6 @@ public class StartUI {
      */
     public static void main(String[] args) {
 
-        new StartUI(new ConsoleInput(), new Tracker()).init();
+        new StartUI(new ValidateInput(), new Tracker()).init();
     }
 }

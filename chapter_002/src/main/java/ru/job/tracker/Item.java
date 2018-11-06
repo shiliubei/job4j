@@ -10,6 +10,14 @@ public class Item {
         this.description = description;
     }
 
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 
     public String getName() {
         return this.name;

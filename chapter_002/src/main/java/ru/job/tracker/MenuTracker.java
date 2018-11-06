@@ -25,18 +25,14 @@ public class MenuTracker {
     private class ShowAllItems implements UserAction {
         public int key () {return 1;}
         @Override
-        public void execute (Input input, Tracker tracker){
+        public void execute (Input input, Tracker tracker) {
             System.out.println("------------ Show all items --------------");
             Item[] result = tracker.getAll();
-            if (tracker.findAll().length == 0) {
+            if (result.length == 0) {
                 System.out.println("There is no items");
-            }
-            for (int index = 0; index < tracker.findAll().length; index++) {
-                if(result[index]!=null) {
-                    System.out.print("id: " + result[index].getId() + " Name: " + result[index].getName() +
-                            " Description: " + result[index].getDescription()
-                            + System.lineSeparator()
-                    );
+            } else {
+                for (Item item : result) {
+                    System.out.println(item);
                 }
             }
         }
@@ -84,7 +80,7 @@ public class MenuTracker {
         @Override
         public void execute (Input input, Tracker tracker){
             System.out.println("------------ Find item by id --------------");
-            String itemId = input.ask("Enter id of item you want to find: ");
+            String itemId = input.ask("Enter id of the item you wanna find: ");
             if (tracker.findById(itemId) != null) {
                 System.out.print("id: " + tracker.findById(itemId).getId() + " Name: " +
                         tracker.findById(itemId).getName() + " Description: " +
@@ -115,9 +111,7 @@ public class MenuTracker {
             return "5 - Find by name";
         }
     }
-    /*public int getActionsLentgh() {
-        return this.actions.length;
-    } */
+
     public void fillActions() {
         this.actions[0]= new AddItem();
         this.actions[1] = new ShowAllItems();

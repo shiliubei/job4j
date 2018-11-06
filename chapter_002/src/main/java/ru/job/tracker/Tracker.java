@@ -96,7 +96,8 @@ public class Tracker {
 
     /**
      * This method replace item f.
-     * @param id String.
+     *
+     * @param id   String.
      * @param item Item.
      */
     public void replace(String id, Item item) {
@@ -112,13 +113,13 @@ public class Tracker {
 
     public void delete(String id) {
         for (int index = 0; index <= position; index++) {
-            if (items[index].getId().equals(id)&&index != position) {
+            if (items[index].getId().equals(id) && index != position) {
                 items[index] = items[position];
                 position--;
                 System.arraycopy(items, index + 1, items, index, position);
             } else {
                 position--;
-                System.arraycopy(items, index + 1, items, index, position-1);
+                System.arraycopy(items, index + 1, items, index, position - 1);
             }
             break;
         }
