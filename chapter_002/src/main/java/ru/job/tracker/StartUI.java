@@ -8,7 +8,7 @@ public class StartUI {
 
     private Input input;
     private final Tracker tracker;
-    private int[] ranges = new int[]{0, 1, 2, 3, 4};
+    private int[] ranges = new int[]{0, 1, 2, 3, 4, 5};
 
     public StartUI(Input input, Tracker tracker) {
         this.input = input;
@@ -141,6 +141,11 @@ public class StartUI {
      */
     public static void main(String[] args) {
 
-        new StartUI(new ValidateInput(), new Tracker()).init();
+        new StartUI(
+                new ValidateInput(
+                        new ConsoleInput()
+                ),
+                new Tracker()
+        ).init();
     }
 }

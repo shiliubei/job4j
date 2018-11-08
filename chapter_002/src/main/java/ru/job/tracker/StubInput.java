@@ -15,7 +15,8 @@ public class StubInput implements Input {
     }
 
     @Override
-    public int ask(String questinon, int[] range) {
-        return -1;
+    public int ask(String question, int[] range) {
+        int key = Integer.valueOf(this.ask(question));
+        return key;
     }
 }
