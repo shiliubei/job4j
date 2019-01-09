@@ -30,7 +30,7 @@ public class PaintTest {
                                 .append("\n" + "++++")
                                 .append("\n" + "+  +")
                                 .append("\n" + "+  +")
-                                .append("\n" + "++++")
+                                .append("\n" + "++++" + "\n")
                                 .append(System.lineSeparator())
                                 .toString()
                 )

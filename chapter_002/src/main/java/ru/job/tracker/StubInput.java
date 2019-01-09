@@ -3,7 +3,7 @@ package ru.job.tracker;
 public class StubInput implements Input {
 
     private final String[] value;
-    private int position;
+    private int position = 0;
 
     public StubInput(final String[] value) {
         this.value = value;
@@ -16,7 +16,18 @@ public class StubInput implements Input {
 
     @Override
     public int ask(String question, int[] range) {
-        int key = Integer.valueOf(this.ask(question));
-        return key;
+        boolean exit = false;
+        int key = Integer.valueOf(this.value[this.position++]);
+        for(int value: range){
+            if(value == key){
+                exit = true;
+                break;
+            }
+        }
+        if (exit){
+            return key;
+        } else {
+            throw new ArrayIndexOutOfBoundsException("Please select key from menu.");
+        }
     }
 }

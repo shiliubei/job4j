@@ -12,7 +12,6 @@ public class FactorialTest {
         int result = summ.fact(5);
         assertThat(result, is(120));
     }
-
     @Test
     public void whenCalculateFactorialForZeroThenOne() {
         Factorial summ = new Factorial();

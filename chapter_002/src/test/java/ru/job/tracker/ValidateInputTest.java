@@ -32,7 +32,7 @@ public class ValidateInputTest {
     }
 
     @Test
-    public void whenInvalidInput() {
+    public void whenInvalidInput11() {
         ValidateInput input = new ValidateInput(
                 new StubInput(new String[] {"invalid", "1"})
         );
@@ -44,5 +44,21 @@ public class ValidateInputTest {
                 )
         );
     }
+
+    @Test
+    public void whenInvalidInput22() {
+        ValidateInput input = new ValidateInput(
+                new StubInput(new String[] {"6", "1"})
+        );
+        input.ask("6", new int[] {1});
+        assertThat(
+                this.mem.toString(),
+                is(
+                        String.format("Please select key from menu.")
+                )
+        );
+    }
+
+
 }
 

@@ -1,6 +1,7 @@
 package ru.job4j.array;
 
 import java.util.Arrays;
+
 /**
  * Array duplicate.
  *
@@ -19,15 +20,15 @@ public class ArrayDuplicate {
         int endIndex = array.length;
         if (array.length > 1) {
             for (int out = 0; out < endIndex; out++) {
-                for (int in = out + 1; in < endIndex; in++ ){
-                    if(array[out].equals(array[in])){
-                        array[in] = array[endIndex-1];
+                for (int in = out + 1; in < endIndex; in++) {
+                    if (array[out].equals(array[in])) {
+                        array[in] = array[endIndex - 1];
                         endIndex--;
                     }
                 }
 
             }
         }
-        return Arrays.copyOf(array,endIndex);
+        return Arrays.copyOf(array, endIndex);
     }
 }
