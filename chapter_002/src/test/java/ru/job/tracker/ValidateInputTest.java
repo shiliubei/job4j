@@ -50,7 +50,7 @@ public class ValidateInputTest {
         ValidateInput input = new ValidateInput(
                 new StubInput(new String[] {"6", "1"})
         );
-        input.ask("6", new int[] {1});
+        input.ask("Enter", new int[] {1});
         assertThat(
                 this.mem.toString(),
                 is(
