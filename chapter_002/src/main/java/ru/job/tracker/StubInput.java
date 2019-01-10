@@ -27,7 +27,7 @@ public class StubInput implements Input {
         if (exit){
             return key;
         } else {
-            throw new ArrayIndexOutOfBoundsException("Please select key from menu.");
+            throw new MenuOutException("Please select key from menu.");
         }
     }
 }
