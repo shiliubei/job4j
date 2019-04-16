@@ -1,5 +1,6 @@
 package ru.job.convertation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ConvertList2Array {
@@ -18,5 +19,14 @@ public class ConvertList2Array {
             array[(++j) / rows][(++k) % cells] = i;
         }
         return array;
+    }
+    public List<Integer> convert (List<int[]> list){
+        List<Integer> result = new ArrayList<>();
+        for (int[] i : list) {
+            for (int k : i) {
+                result.add(k);
+            }
+        }
+        return result;
     }
 }
