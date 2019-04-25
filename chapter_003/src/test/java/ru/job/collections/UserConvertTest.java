@@ -14,7 +14,7 @@ import static org.junit.Assert.assertThat;
 public class UserConvertTest {
     @Test
     public void WhetConvertListToHashMap(){
-        User user1 = new User(1, "r2d2", "Marsol");
+        User user1 = new User(1, "r2d2", "Marsvil");
         User user2 = new User(2, "Corshun", "Baden Baden");
         User user3 = new User(3, "Sula", "Algiers");
         UserConvert userConvert = new UserConvert();
