@@ -1,12 +1,11 @@
 package ru.job.sort;
 
-public class User implements Comparable<User>{
+public class User implements Comparable<User> {
 
     private String name;
     private int age;
 
     public User(String name, int age) {
-        super();
         this.name = name;
         this.age = age;
     }
@@ -28,6 +27,7 @@ public class User implements Comparable<User>{
     }
 
     public int compareTo(User person) {
-        return this.age > person.age ? 1 : this.age < person.age ? -1 : 0;
+
+        return Integer.compare(this.age, person.age);
     }
 }
