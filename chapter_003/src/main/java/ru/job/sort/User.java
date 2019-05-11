@@ -1,5 +1,7 @@
 package ru.job.sort;
 
+import java.util.Comparator;
+
 public class User implements Comparable<User> {
 
     private String name;
@@ -8,6 +10,14 @@ public class User implements Comparable<User> {
     public User(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+
+
+    class SortByAge implements Comparator<User>{
+        public int compare(User a, User b){
+            return a.age - b.age;
+        }
     }
 
     public String getName() {

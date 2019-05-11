@@ -13,6 +13,8 @@ public class User {
         this.city = city;
     }
 
+
+
     public Integer getId() {
         return id;
     }
