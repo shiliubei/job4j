@@ -5,20 +5,13 @@ import java.util.Comparator;
 public class User implements Comparable<User> {
 
     private String name;
-    private int age;
+    private Integer age;
 
-    public User(String name, int age) {
+    public User(String name, Integer age) {
         this.name = name;
         this.age = age;
     }
 
-
-
-    class SortByAge implements Comparator<User>{
-        public int compare(User a, User b){
-            return a.age - b.age;
-        }
-    }
 
     public String getName() {
         return name;
@@ -32,7 +25,7 @@ public class User implements Comparable<User> {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

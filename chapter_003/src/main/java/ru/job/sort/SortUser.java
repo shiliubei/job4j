@@ -19,13 +19,29 @@ public class SortUser {
         userList.sort(new SortByName());
         return userList;
     }
-    public List<User> sortByAllFields (List<User> userList){
-        userList.sort(new SortByName());
-        userList.sort(new SortByAge());
+
+    public List<User> sortByAllFields(List<User> userList) {
+        userList.sort(new UserSortingComparator());
         return userList;
     }
 
 
+}
+
+class UserSortingComparator implements Comparator<User> {
+
+    @Override
+    public int compare(User user1, User user2) {
+
+        int NameCompare = user1.getName().compareTo(user2.getName());
+        int AgeCompare = user1.getAge() - user2.getAge();
+
+        if (NameCompare == 0) {
+            return ((AgeCompare == 0) ? NameCompare : AgeCompare);
+        } else {
+            return NameCompare;
+        }
+    }
 }
 
 class SortByName implements Comparator<User> {
@@ -35,8 +51,8 @@ class SortByName implements Comparator<User> {
     }
 }
 
-class SortByAge implements Comparator<User>{
-    public int compare(User a, User b){
+class SortByAge implements Comparator<User> {
+    public int compare(User a, User b) {
         return a.getAge() - b.getAge();
     }
 }
