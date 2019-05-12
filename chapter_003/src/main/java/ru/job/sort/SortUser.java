@@ -31,15 +31,15 @@ public class SortUser {
 class UserSortingComparator implements Comparator<User> {
 
     @Override
-    public int compare(User user1, User user2) {
+    public int compare(User a, User b) {
 
-        int NameCompare = user1.getName().compareTo(user2.getName());
-        int AgeCompare = user1.getAge() - user2.getAge();
+        int nameCompare = a.getName().compareTo(b.getName());
+        int ageCompare = a.getAge() - b.getAge();
 
-        if (NameCompare == 0) {
-            return ((AgeCompare == 0) ? NameCompare : AgeCompare);
+        if (nameCompare == 0) {
+            return ((ageCompare == 0) ? nameCompare : ageCompare);
         } else {
-            return NameCompare;
+            return nameCompare;
         }
     }
 }
