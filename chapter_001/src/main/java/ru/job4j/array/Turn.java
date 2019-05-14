@@ -10,14 +10,15 @@ package ru.job4j.array;
 public class Turn {
     /**
      * change elements from first one up to middle element except middle element.
-     * @param  array initial array.
+     *
+     * @param array initial array.
      * @return array - backward array.
      */
     public int[] turn(int[] array) {
-        for (int i = 0; i<array.length/2; i++) {
-            array[i] = array[i]+array[array.length-1-i];
-            array[array.length-1-i] = array[i] - array[array.length-1-i];
-            array[i] = array[i] - array[array.length-1-i];
+        for (int i = 0; i < array.length / 2; i++) {
+            array[i] = array[i] + array[array.length - 1 - i];
+            array[array.length - 1 - i] = array[i] - array[array.length - 1 - i];
+            array[i] = array[i] - array[array.length - 1 - i];
         }
         return array;
     }

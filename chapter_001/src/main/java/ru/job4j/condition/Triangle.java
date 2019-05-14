@@ -13,9 +13,9 @@ public class Triangle {
 
     /**
      * Метод вычисления полупериметра по длинам сторон.
-     *
+     * <p>
      * Формула.
-     *
+     * <p>
      * (ab + ac + bc) / 2
      *
      * @param ab расстояние между точками a b
@@ -24,7 +24,7 @@ public class Triangle {
      * @return Перимент.
      */
     public double period(double ab, double ac, double bc) {
-        return  (ab + ac + bc) / 2; // вместо -1 нужно написать формулу вычисляющую полуперимент.
+        return (ab + ac + bc) / 2; // вместо -1 нужно написать формулу вычисляющую полуперимент.
     }
 
     /**
@@ -40,14 +40,15 @@ public class Triangle {
         double p = this.period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
             // написать формулу для расчета площади треугольника.
-            rsl = Math.sqrt(p*(p-ab)*(p-ac)*(p-bc)); //вместо многоточия нужно написать формулу Герона с подставленными переменные ab, ac, dc, p.
+            rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc)); //вместо многоточия нужно написать формулу Герона с подставленными переменные ab, ac, dc, p.
             // Для извлечение квадратного корня надо использовать метод Math.sqrt()
         }
         return rsl;
     }
+
     /**
      * Метод проверяет можно ли построить треугольник с такими длинами сторон.
-     *
+     * <p>
      * Подумайте какое надо написать условие, чтобы определить можно ли построить треугольник.
      *
      * @param ab Длина от точки a b.
@@ -56,7 +57,7 @@ public class Triangle {
      * @return
      */
     private boolean exist(double ab, double ac, double bc) {
-        if((ab + ac)>bc || (ab + bc)>ac || (ac + bc)>ab) {
+        if ((ab + ac) > bc || (ab + bc) > ac || (ac + bc) > ab) {
             return true;
         }
         return false;

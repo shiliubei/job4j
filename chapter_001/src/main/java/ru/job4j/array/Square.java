@@ -1,4 +1,5 @@
 package ru.job4j.array;
+
 /**
  * raising the number of array to the second power.
  *
@@ -9,13 +10,14 @@ package ru.job4j.array;
 public class Square {
     /**
      * rising to second power by multiplication of each number by itself.
-     * @param  bound quantity of numbers in array.
+     *
+     * @param bound quantity of numbers in array.
      * @return rst - array of numbers.
      */
     public int[] calculate(int bound) {
         int[] rst = new int[bound];
-        for (int i = 0; i<bound; i++){
-            rst[i] = (i+1)*(i+1);
+        for (int i = 0; i < bound; i++) {
+            rst[i] = (i + 1) * (i + 1);
         }
         return rst;
     }

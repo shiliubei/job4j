@@ -12,6 +12,7 @@ package ru.job4j.condition;
 public class DummyBot {
     /**
      * Отвечает на вопросы.
+     *
      * @param question Вопрос от клиента.
      * @return Ответ.
      */

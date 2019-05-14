@@ -1,4 +1,5 @@
 package ru.job4j.max;
+
 /**
  * @author Danil Liu ()
  * @version $Id$
@@ -8,8 +9,9 @@ public class Max {
 
     /**
      * finding a greater number from two numbers.
-     * @param  first one of two numbers.
-     * @param  second one of two numbers.
+     *
+     * @param first  one of two numbers.
+     * @param second one of two numbers.
      * @return summ.
      */
     public int max(int first, int second) {
@@ -18,15 +20,17 @@ public class Max {
 
         return max;
     }
+
     /**
      * finding a greater number from three numbers use MaxOfTwo.
-     * @param  first one of two numbers.
-     * @param  second one of two numbers.
+     *
+     * @param first  one of two numbers.
+     * @param second one of two numbers.
      * @return summ.
      */
-    public int max(int first, int second, int third){
+    public int max(int first, int second, int third) {
 
-        int max = this.max(this.max(first, second),third);
+        int max = this.max(this.max(first, second), third);
 
         return max;
     }

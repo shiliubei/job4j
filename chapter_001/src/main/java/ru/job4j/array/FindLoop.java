@@ -9,7 +9,7 @@ package ru.job4j.array;
  */
 public class FindLoop {
     /**
-     *  finds the required element.
+     * finds the required element.
      *
      * @param data array where we will find.
      * @param el   element that need to find.
