@@ -93,8 +93,7 @@ public class Logic3T {
     public boolean hasGap() {
         for (int row = 0; row < 3; row++) {
             for (int column = 0; column < 3; column++) {
-                if (this.table[row][column].hasMarkO() || this.table[row][column].hasMarkX()) {
-                } else {
+                if (!this.table[row][column].hasMarkO() && !this.table[row][column].hasMarkX()) {
                     return true;
                 }
             }
