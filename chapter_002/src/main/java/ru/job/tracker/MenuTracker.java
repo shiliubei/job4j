@@ -91,9 +91,9 @@ public class MenuTracker {
             System.out.println("------------ Find item by id --------------");
             String itemId = input.ask("Enter id of the item you wanna find: ");
             if (tracker.findById(itemId) != null) {
-                System.out.print("id: " + tracker.findById(itemId).getId() + " Name: " +
-                        tracker.findById(itemId).getName() + " Description: " +
-                        tracker.findById(itemId).getDescription() + "\n");
+                System.out.print("id: " + tracker.findById(itemId).getId() + " Name: "
+                        + tracker.findById(itemId).getName() + " Description: "
+                        + tracker.findById(itemId).getDescription() + "\n");
             } else {
                 System.out.println("There is no item with this id");
             }
@@ -110,9 +110,9 @@ public class MenuTracker {
             System.out.println("------------ Find item by name --------------");
             String itemName = input.ask("Enter name of item you want to find: ");
             if (tracker.findByName(itemName) != null) {
-                System.out.print("id: " + tracker.findByName(itemName).getId() + " Name: " +
-                        tracker.findByName(itemName).getName() + " Description: " +
-                        tracker.findByName(itemName).getDescription() + "\n");
+                System.out.print("id: " + tracker.findByName(itemName).getId() + " Name: "
+                        + tracker.findByName(itemName).getName() + " Description: "
+                        + tracker.findByName(itemName).getDescription() + "\n");
             } else {
                 System.out.println("There is no item with this name");
             }

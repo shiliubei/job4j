@@ -51,8 +51,8 @@ public class StartUI {
             System.out.println("There is no items");
         }
         for (int index = 0; index < tracker.findAll().length; index++) {
-            System.out.print("id: " + result[index].getId() + " Name: " + result[index].getName() +
-                    " Description: " + result[index].getDescription()
+            System.out.print("id: " + result[index].getId() + " Name: " + result[index].getName()
+                    + " Description: " + result[index].getDescription()
                     + System.lineSeparator()
             );
         }
@@ -110,9 +110,9 @@ public class StartUI {
         System.out.println("------------ Find item by id --------------");
         String itemId = this.input.ask("Enter id of item you want to find: ");
         if (tracker.findById(itemId) != null) {
-            System.out.print("id: " + this.tracker.findById(itemId).getId() + " Name: " +
-                    tracker.findById(itemId).getName() + " Description: " +
-                    tracker.findById(itemId).getDescription() + "\n");
+            System.out.print("id: " + this.tracker.findById(itemId).getId() + " Name: "
+                    + tracker.findById(itemId).getName() + " Description: "
+                    + tracker.findById(itemId).getDescription() + "\n");
         } else {
             System.out.println("There is no item with this id");
         }
@@ -125,9 +125,9 @@ public class StartUI {
         System.out.println("------------ Find item by name --------------");
         String itemName = this.input.ask("Enter name of item you want to find: ");
         if (tracker.findByName(itemName) != null) {
-            System.out.print("id: " + tracker.findByName(itemName).getId() + " Name: " +
-                    tracker.findByName(itemName).getName() + " Description: " +
-                    tracker.findByName(itemName).getDescription() + "\n");
+            System.out.print("id: " + tracker.findByName(itemName).getId() + " Name: "
+                    + tracker.findByName(itemName).getName() + " Description: "
+                    + tracker.findByName(itemName).getDescription() + "\n");
         } else {
             System.out.println("There is no item with this name");
         }

@@ -12,8 +12,8 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class UserConvertTest {
-    @Test
-    public void WhetConvertListToHashMap(){
+   /* @Test
+    public void WhetConvertListToHashMap() {
         User user1 = new User(1, "r2d2", "Marsvil");
         User user2 = new User(2, "Corshun", "Baden Baden");
         User user3 = new User(3, "Sula", "Algiers");
@@ -28,5 +28,5 @@ public class UserConvertTest {
         map.put(3, user3);
         HashMap<Integer, User> result = userConvert.process(list);
         assertThat(result, is(map));
-    }
+    }*/
 }

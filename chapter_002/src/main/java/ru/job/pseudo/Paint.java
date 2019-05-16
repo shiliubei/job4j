@@ -1,7 +1,7 @@
 package ru.job.pseudo;
 
 public class Paint {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Shape square = new Square();
         draw(square);
         Shape triagle = new Triangle();
@@ -10,7 +10,7 @@ public class Paint {
 
     }
 
-    public static void draw (Shape shape){
+    public static void draw(Shape shape) {
         System.out.println(shape.draw());
     }
 }
