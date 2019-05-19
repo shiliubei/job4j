@@ -1,0 +1,19 @@
+language: java
+jdk:
+ - jdk1.8
+
+sudo: false
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+env:
+  global:
+    - CODECOV_TOKEN="17682c6d-6f00-4b46-9028-18b4664cb230"
+
+notifications:
+  email:
+    recipients:
+      -shiliubei@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
