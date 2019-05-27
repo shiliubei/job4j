@@ -1,4 +1,4 @@
-package ru.job.phone_book;
+package ru.job.phonebook;
 
 import java.util.ArrayList;
 import java.util.List;

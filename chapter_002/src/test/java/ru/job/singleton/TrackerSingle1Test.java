@@ -13,7 +13,7 @@ import ru.job.singleton.TrackerSingle1;
 
 public class TrackerSingle1Test {
     @Test
-    public void FirstAndSecondAreEqual() {
+    public void firstAndSecondAreEqual() {
         TrackerSingle1 tracker1 = TrackerSingle1.INSTANCE;
         TrackerSingle1 tracker2 = TrackerSingle1.INSTANCE;
         assertThat(tracker1, is(tracker2));
