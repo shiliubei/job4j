@@ -47,13 +47,11 @@ public class StartUI {
         System.out.println("------------ Show all items --------------");
         Item[] result = tracker.getAll();
         if (tracker.findAll().length == 0) {
-            System.out.println("There is no items");
-        }
-        for (int index = 0; index < tracker.findAll().length; index++) {
-            System.out.print("id: " + result[index].getId() + " Name: " + result[index].getName()
-                    + " Description: " + result[index].getDescription()
-                    + System.lineSeparator()
-            );
+            System.out.println("There are no items");
+        } else {
+            for (Item item : result) {
+                System.out.print(item);
+            }
         }
     }
 
