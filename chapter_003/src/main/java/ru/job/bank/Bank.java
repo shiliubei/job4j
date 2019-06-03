@@ -66,5 +66,21 @@ public class Bank {
         }
         return result;
     }
+    /**
+     * Getting the user by ID.
+     *
+     * @param passport, the user's ID.
+     * @return the user.
+     */
+    public User getUserById(String passport) {
+        User result = null;
+        for (User user : this.bank.keySet()) {
+            if (user.getPassport().equals(passport)) {
+                result = user;
+                break;
+            }
+        }
+        return result;
+    }
 
 }
